@@ -18,7 +18,7 @@ import Panel from "primevue/panel";
 export default {
   setup() {},
   components: {
-    Panel,
+    Panel, //test
   },
 };
 </script>
