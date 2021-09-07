@@ -1,10 +1,13 @@
 <template>
   <div>
-    <Panel :header="i + ` Header`" v-for="i in 5" :key="i">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua?
-      </p>
+    <Panel
+      :header="i + ` Header`"
+      v-for="i in 5"
+      :key="i"
+      style="margin-bottom: 20px"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua?
     </Panel>
   </div>
 </template>

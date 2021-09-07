@@ -3,7 +3,7 @@
     <div class="p-col">
       <MainContent />
     </div>
-    <div class="p-col-fixed" style="width: 300px">
+    <div class="p-col-fixed nav-panel-fixed">
       <navigation-panel />
     </div>
   </div>
@@ -26,4 +26,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.nav-panel-fixed {
+  width: 300px;
+  height: 100%;
+  position: sticky;
+  top: 0;
+}
+</style>
