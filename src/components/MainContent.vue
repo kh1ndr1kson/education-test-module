@@ -1,24 +1,17 @@
 <template>
-  <div>
-    <Panel
-      :header="i + ` Header`"
-      v-for="i in 5"
-      :key="i"
-      style="margin-bottom: 20px"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua?
-    </Panel>
-  </div>
+	<div>
+		<test-item v-for="i in 5" :key="i" />
+	</div>
 </template>
 
 <script>
-import Panel from "primevue/panel";
+// my componets
+import TestItem from "./TestItem.vue";
 
 export default {
-  setup() {},
-  components: {
-    Panel, //test
-  },
+	setup() {},
+	components: {
+		TestItem,
+	},
 };
 </script>
