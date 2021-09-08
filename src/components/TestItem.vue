@@ -1,6 +1,11 @@
 <template>
 	<div>
-		<Panel :header="`Header`" style="margin-bottom: 20px">
+		<Panel
+			v-for="item in items"
+			:key="item.title"
+			:header="item.title"
+			style="margin-bottom: 20px"
+		>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua?
 		</Panel>
@@ -14,6 +19,12 @@ export default {
 	setup() {},
 	components: {
 		Panel,
+	},
+	props: {
+		items: {
+			type: Array,
+			required: true,
+		},
 	},
 };
 </script>

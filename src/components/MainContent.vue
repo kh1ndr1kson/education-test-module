@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<test-item v-for="i in 5" :key="i" />
+		<test-item :items="items" />
 	</div>
 </template>
 
@@ -8,8 +8,16 @@
 // my componets
 import TestItem from "./TestItem.vue";
 
+import { getItems } from "@/hooks/getItems";
+
 export default {
-	setup() {},
+	setup() {
+		const { items } = getItems();
+
+		return {
+			items,
+		};
+	},
 	components: {
 		TestItem,
 	},

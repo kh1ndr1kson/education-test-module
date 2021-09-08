@@ -23,6 +23,7 @@ export default {
 		MainContent,
 		NavigationPanel,
 	},
+	setup() {},
 };
 </script>
 
