@@ -30,9 +30,20 @@ import { getItems } from "@/hooks/getItems";
 
 export default {
 	setup() {
-		const { items } = getItems();
+		const test_id = Number(
+			window.location.href.split("/")[
+				window.location.href.split("/").length - 1
+			]
+		);
+
+		const url = `https://eschool.su/api/tests/${test_id}/questions`;
+
+		const { isLoading, items } = getItems(url);
+
+		//console.log(items);
 
 		return {
+			isLoading,
 			items,
 		};
 	},

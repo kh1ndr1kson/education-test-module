@@ -1,26 +1,53 @@
-export function getItems() {
-	const items = [
+import axios from "axios";
+import {ref, onMounted} from "vue";
+
+export function getItems(url) {
+	const isLoading = ref(true),
+				items = ref([]);
+
+	const fetching = async () => {
+		try
 		{
-			title: "Question #1",
-			content:
-				"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, consequuntur?",
-			checked: true,
-		},
+			const response = await axios.get(url);
+
+			items.value = response.data;
+		}
+		catch (error)
 		{
-			title: "Question #2",
-			content:
-				"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, consequuntur?",
-			checked: false,
-		},
+			console.log(error);
+		}
+		finally
 		{
-			title: "Question #3",
-			content:
-				"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, consequuntur?",
-			checked: false,
-		},
-	];
+			isLoading.value = false;
+		}
+	};
+
+	if (url !== undefined)
+	onMounted(fetching);
+
+	// const items = [
+	// 	{
+	// 		title: "Question #1",
+	// 		content:
+	// 			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, consequuntur?",
+	// 		checked: true,
+	// 	},
+	// 	{
+	// 		title: "Question #2",
+	// 		content:
+	// 			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, consequuntur?",
+	// 		checked: false,
+	// 	},
+	// 	{
+	// 		title: "Question #3",
+	// 		content:
+	// 			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, consequuntur?",
+	// 		checked: false,
+	// 	},
+	// ];
 
 	return {
+		isLoading,
 		items,
 	};
 }
