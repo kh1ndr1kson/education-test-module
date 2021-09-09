@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<test-item :items="items" />
+		<test-item :items="items" :isLoading="isLoading" />
+		{{ isLoading }}
 	</div>
 </template>
 
@@ -12,9 +13,10 @@ import { getItems } from "@/hooks/getItems";
 
 export default {
 	setup() {
-		const { items } = getItems();
+		const { isLoading, items } = getItems();
 
 		return {
+			isLoading,
 			items,
 		};
 	},

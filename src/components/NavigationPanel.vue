@@ -17,7 +17,7 @@
 			/>
 		</template>
 		<template #content="slotProps">
-			<small class="p-text-secondary">{{ slotProps.item.title }}</small>
+			<small class="p-text-secondary">{{ slotProps.item.text }}</small>
 		</template>
 	</Timeline>
 </template>
@@ -30,17 +30,17 @@ import { getItems } from "@/hooks/getItems";
 
 export default {
 	setup() {
-		const test_id = Number(
-			window.location.href.split("/")[
-				window.location.href.split("/").length - 1
-			]
-		);
+		// const test_id = Number(
+		// 	window.location.href.split("/")[
+		// 		window.location.href.split("/").length - 1
+		// 	]
+		// );
 
-		const url = `https://eschool.su/api/tests/${test_id}/questions`;
+		//const url = `https://eschool.su/api/tests/${test_id}/questions`;
 
-		const { isLoading, items } = getItems(url);
+		const { isLoading, items } = getItems();
 
-		//console.log(items);
+		console.log(items);
 
 		return {
 			isLoading,
