@@ -73,7 +73,8 @@ export function getItems() {
         "success": "1",
         "status": "1",
         "sdate": "2021-06-02 22:13:51"
-    }]
+    }],
+		"checkeds": []
 }, {
     "id": "11",
     "test_id": "1",
@@ -118,7 +119,8 @@ export function getItems() {
         "success": "0",
         "status": "1",
         "sdate": "2021-06-02 22:44:46"
-    }]
+    }],
+		"checkeds": []
 }];
 
 	return {
