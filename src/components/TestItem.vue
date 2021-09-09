@@ -1,29 +1,29 @@
 <template>
-	<div v-if="!isLoading">
-		<Panel
-			v-for="item in items"
-			:key="item.id"
-			:header="item.text"
-			style="margin-bottom: 20px"
-		>
-			<div
-				v-for="answer in item.answers"
-				:key="answer.id"
-				class="p-field-checkbox"
-			>
-				<Checkbox
-					:id="answer.id"
-					name="answer_id"
-					:value="answer.id"
-					v-model="questionsReady"
-				/>
-				<label :for="answer.id">{{ answer.text }}</label>
-			</div>
-		</Panel>
-	</div>
-	<div v-else>
-		<SkeletonPanel />
-	</div>
+  <div v-if="!isLoading">
+    <Panel
+      v-for="question in items"
+      :key="question.id"
+      :header="question.text"
+      style="margin-bottom: 20px"
+    >
+      <div
+        v-for="answer in question.answers"
+        :key="answer.id"
+        class="p-field-checkbox"
+      >
+        <Checkbox
+          :id="answer.id"
+          name="answer_id"
+          :value="answer.id"
+          v-model="question.checkeds"
+        />
+        <label :for="answer.id">{{ answer.text }}</label>
+      </div>
+    </Panel>
+  </div>
+  <div v-else>
+    <SkeletonPanel />
+  </div>
 </template>
 
 <script>
@@ -31,18 +31,10 @@ import Panel from "primevue/panel";
 import Checkbox from "primevue/checkbox";
 
 import SkeletonPanel from "./skeletons/SkeletonPanel.vue";
-//import { ref } from "vue";
-import { getQuestionsReady } from "@/hooks/getQuestionsReady";
 
 export default {
 	setup() {
-		//const questionsReady = ref([]);
 
-		const { questionsReady } = getQuestionsReady();
-
-		return {
-			questionsReady,
-		};
 	},
 	components: {
 		Panel,
@@ -63,6 +55,6 @@ export default {
 
 <style scoped>
 .p-field-checkbox:last-child {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 </style>
