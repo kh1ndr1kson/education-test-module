@@ -28,8 +28,6 @@
 import Timeline from "primevue/timeline";
 import Avatar from "primevue/avatar";
 
-import { ref } from "vue";
-
 export default {
 	setup() {},
 	name: "NavigationPanel",
