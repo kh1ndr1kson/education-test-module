@@ -22,7 +22,6 @@
 			<small class="p-text-secondary">{{ slotProps.item.text }}</small>
 		</template>
 	</Timeline>
-	<button @click="bool = !bool">Click</button>
 </template>
 
 <script>
@@ -32,13 +31,7 @@ import Avatar from "primevue/avatar";
 import { ref } from "vue";
 
 export default {
-	setup() {
-		let bool = ref(true);
-
-		return {
-			bool,
-		};
-	},
+	setup() {},
 	name: "NavigationPanel",
 	components: {
 		Timeline,
