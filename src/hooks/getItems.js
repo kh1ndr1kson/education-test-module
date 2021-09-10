@@ -26,102 +26,91 @@ export function getItems() {
 	setTimeout(()=> isLoading.value = false, 1000);
 	items.value = [
 		{
-    "id": "7",
-    "image": "",
-    "text": "qwe",
-    "answers":
-		[
-			{
-        "id": "11",
-        "image": "",
-        "text": "qwe",
-			}
-		],
-		"checkeds": ["11"]
-}, {
-    "id": "10",
-    "test_id": "1",
-    "orders": "1",
-    "image": "",
-    "text": "qwe",
-    "status": "1",
-    "sdate": "2021-06-02 22:12:54",
-    "answers": [{
-        "id": "14",
-        "orders": "1",
-        "image": "",
-        "question_id": "10",
-        "text": "qwe",
-        "success": "0",
-        "status": "1",
-        "sdate": "2021-06-02 22:13:24"
-    }, {
-        "id": "15",
-        "orders": "3",
-        "image": "",
-        "question_id": "10",
-        "text": "qwe",
-        "success": "0",
-        "status": "1",
-        "sdate": "2021-06-02 22:13:41"
-    }, {
-        "id": "16",
-        "orders": "2",
-        "image": "",
-        "question_id": "10",
-        "text": "qwe",
-        "success": "1",
-        "status": "1",
-        "sdate": "2021-06-02 22:13:51"
-    }],
-		"checkeds": []
-}, {
-    "id": "11",
-    "test_id": "1",
-    "orders": "2",
-    "image": "",
-    "text": "qwe",
-    "status": "1",
-    "sdate": "2021-06-02 22:42:57",
-    "answers": [{
-        "id": "17",
-        "orders": "1",
-        "image": "",
-        "question_id": "11",
-        "text": "qwe",
-        "success": "1",
-        "status": "1",
-        "sdate": "2021-06-02 22:44:02"
-    }, {
-        "id": "18",
-        "orders": "2",
-        "image": "",
-        "question_id": "11",
-        "text": "qwe",
-        "success": "1",
-        "status": "1",
-        "sdate": "2021-06-02 22:44:18"
-    }, {
-        "id": "19",
-        "orders": "3",
-        "image": "",
-        "question_id": "11",
-        "text": "qwe",
-        "success": "0",
-        "status": "1",
-        "sdate": "2021-06-02 22:44:31"
-    }, {
-        "id": "20",
-        "orders": "4",
-        "image": "",
-        "question_id": "11",
-        "text": "qwe",
-        "success": "0",
-        "status": "1",
-        "sdate": "2021-06-02 22:44:46"
-    }],
-		"checkeds": []
-}];
+			"id": "1",
+			"image": "",
+			"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, nostrum?",
+			"answers":
+			[
+				{
+					"id": "11",
+					"image": "",
+					"text": "Dolor sit amet consectetur adipisicing elit.",
+				}
+			],
+			"checkeds": ["11"]
+		},
+		{
+			"id": "2",
+			"image": "",
+			"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, nostrum?",
+			"answers":
+			[
+				{
+					"id": "12",
+					"image": "",
+					"text": "Dolor sit amet consectetur adipisicing elit.",
+				}
+			],
+			"checkeds": []
+		},
+		{
+			"id": "3",
+			"image": "",
+			"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, nostrum?",
+			"answers":
+			[
+				{
+					"id": "13",
+					"image": "",
+					"text": "Dolor sit amet consectetur adipisicing elit.",
+				}
+			],
+			"checkeds": []
+		},
+		{
+			"id": "4",
+			"image": "",
+			"text": "Вопрос №4",
+			"answers":
+			[
+				{
+					"id": "14",
+					"image": "",
+					"text": "Ответ №1",
+				},
+				{
+					"id": "15",
+					"image": "",
+					"text": "Ответ №2",
+				},
+				{
+					"id": "16",
+					"image": "",
+					"text": "Ответ №3",
+				}
+			],
+			"checkeds": ["15"]
+		},
+		{
+			"id": "5",
+			"image": "",
+			"text": "Вопрос №5",
+			"answers":
+			[
+				{
+					"id": "17",
+					"image": "",
+					"text": "Ответ №3",
+				},
+				{
+					"id": "18",
+					"image": "",
+					"text": "Ответ №3",
+				}
+			],
+			"checkeds": ["17"]
+		}
+];
 
 	return {
 		isLoading,
