@@ -1,10 +1,11 @@
 <template>
 	<div id="app" class="p-grid">
+		{{ compItems }}
 		<div class="p-col">
-			<main-content :items="compItems" />
+			<main-content :items="compItems" :isLoading="isLoading" />
 		</div>
 		<div class="p-col-fixed nav-panel-fixed">
-			<navigation-panel :items="compItems" />
+			<!-- <navigation-panel :items="compItems" /> -->
 		</div>
 	</div>
 </template>
@@ -15,9 +16,9 @@
 
 // my componets
 import MainContent from "./components/MainContent.vue";
-import NavigationPanel from "./components/NavigationPanel.vue";
+//import NavigationPanel from "./components/NavigationPanel.vue";
 
-import { computed } from "vue";
+//import { computed } from "vue";
 import { getItems } from "@/hooks/getItems";
 
 export default {
@@ -28,22 +29,22 @@ export default {
 		// 	]
 		// );
 
+		const url = `https://eschool.su/api/tests/questions/get_items.php`;
 		//const url = `https://eschool.su/api/tests/${test_id}/questions`;
 
-		const { isLoading, items } = getItems();
+		const { isLoading, items } = getItems(url);
 
-		const compItems = computed(() => items.value);
+		const compItems = items;
 
 		return {
 			isLoading,
-			items,
 			compItems,
 		};
 	},
 	name: "App",
 	components: {
 		MainContent,
-		NavigationPanel,
+		//	NavigationPanel,
 	},
 };
 </script>
