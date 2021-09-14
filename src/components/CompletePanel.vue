@@ -1,8 +1,8 @@
 <template>
 	<div class="p-grid fixed-panel">
 		<div class="p-col">
-			<ProgressBar :value="percent">
-				Тест пройден на {{ percent }}%
+			<ProgressBar :value="percent" style="">
+				<span class="progressbar-text">Тест пройден на {{ percent }}%</span>
 			</ProgressBar>
 		</div>
 		<div class="p-col-fixed" style="width: 100%">
@@ -56,5 +56,16 @@ export default {
 	background: rgba(255, 255, 255, 0.25);
 	-webkit-backdrop-filter: blur(5px);
 	backdrop-filter: blur(5px);
+}
+
+.progressbar-text {
+	color: white;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+/* defaul progress-bar mutations */
+.p-progressbar {
+	background: #ccc;
 }
 </style>
