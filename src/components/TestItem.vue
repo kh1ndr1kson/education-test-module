@@ -1,12 +1,7 @@
 <template>
-	<Panel
-		v-for="question in items"
-		:key="question.id"
-		:header="question.text"
-		style="margin-bottom: 20px"
-	>
+	<Panel :header="localQuestion.text" style="margin-bottom: 20px">
 		<div
-			v-for="answer in question.answers"
+			v-for="answer in localQuestion.answers"
 			:key="answer.id"
 			class="p-field-checkbox"
 		>
@@ -14,7 +9,7 @@
 				:id="answer.id"
 				name="answer_id"
 				:value="answer.id"
-				v-model="question.checkeds"
+				v-model="localQuestion.checkeds"
 			/>
 			<label :for="answer.id">{{ answer.text }}</label>
 		</div>
@@ -24,16 +19,22 @@
 <script>
 import Panel from "primevue/panel";
 import Checkbox from "primevue/checkbox";
+import { ref } from "vue";
 
 export default {
-	setup() {},
+	setup(props) {
+		const localQuestion = ref(props.question);
+
+		return {
+			localQuestion,
+		};
+	},
 	components: {
 		Panel,
 		Checkbox,
 	},
 	props: {
-		items: Array,
-		isLoading: Boolean,
+		question: Object,
 	},
 };
 </script>

@@ -1,9 +1,8 @@
 <template>
-	{{ compItems }}
 	<div v-if="!isLoading">
 		{{ isLoading }}
-		<test-item :items="compItems" />
-		<!-- <CompletePanel :items="compItems" /> -->
+		<test-item v-for="item in items" :key="item.id" :question="item" />
+		<CompletePanel :items="items" />
 	</div>
 	<div v-else>
 		<SkeletonPanel />
@@ -13,24 +12,23 @@
 <script>
 // my componets
 import TestItem from "./TestItem.vue";
-//import CompletePanel from "./CompletePanel.vue";
+import CompletePanel from "./CompletePanel.vue";
 
 import SkeletonPanel from "./skeletons/SkeletonPanel.vue";
-import { computed } from "vue";
 
 export default {
-	setup(props) {
-		console.log("MainContent", props.items);
+	setup() {
+		console.log("MainContent");
 
-		const compItems = computed(() => props.items);
+		//const compItems = computed(() => props.items);
 
 		return {
-			compItems,
+			//compItems,
 		};
 	},
 	components: {
 		TestItem,
-		//CompletePanel,
+		CompletePanel,
 		SkeletonPanel,
 	},
 	props: {

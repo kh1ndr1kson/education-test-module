@@ -1,5 +1,4 @@
 <template>
-	{{ items }}
 	<Timeline :value="items" align="alternate" class="customized-timeline">
 		<template #marker="slotProps">
 			<transition name="slide-fade" mode="out-in">
@@ -29,9 +28,17 @@
 import Timeline from "primevue/timeline";
 import Avatar from "primevue/avatar";
 
+import { computed } from "vue";
+
 export default {
 	setup(props) {
-		console.log("Navpanel", props);
+		console.log("NavPanel", props);
+
+		const compItems = computed(() => props.items);
+
+		return {
+			compItems,
+		};
 	},
 	name: "NavigationPanel",
 	components: {
