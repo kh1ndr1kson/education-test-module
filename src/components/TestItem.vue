@@ -10,6 +10,7 @@
 				name="answer_id"
 				:value="answer.id"
 				v-model="localQuestion.checkeds"
+				@click="clickSaveAnswer(answer.id)"
 			/>
 			<label :for="answer.id">{{ answer.text }}</label>
 		</div>
@@ -21,12 +22,30 @@ import Panel from "primevue/panel";
 import Checkbox from "primevue/checkbox";
 import { ref } from "vue";
 
+import { saveAnswer } from "@/hooks/saveAnswer";
+
 export default {
 	setup(props) {
 		const localQuestion = ref(props.question);
 
+		const clickSaveAnswer = (id) => {
+			// const test_id = Number(
+			// 	window.location.href.split("/")[
+			// 		window.location.href.split("/").length - 1
+			// 	]
+			// );
+
+			const url = `https://eschool.su/api/tests/questions/answers/set_result.php`;
+			//const url = `https://eschool.su/api/tests/${test_id}/questions`;
+
+			console.log(url, id);
+
+			saveAnswer(url, id);
+		};
+
 		return {
 			localQuestion,
+			clickSaveAnswer,
 		};
 	},
 	components: {
